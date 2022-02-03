@@ -54,8 +54,7 @@ public static class CsvHelper
                 LocationDescription = lineData[4],
                 Address = lineData[5],
                 Food = lineData[11],
-                Latitude = latitude,
-                Longitude = longitude
+                Location = new LatLng(latitude, longitude)
             });
         }
 

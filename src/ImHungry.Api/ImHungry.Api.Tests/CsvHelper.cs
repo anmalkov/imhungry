@@ -20,10 +20,10 @@ public class CsvHelperTests
 
         Assert.Equal(552, mobileFoodPoints.Count());
 
-        Assert.Equal(37.76201920035647, mobileFoodPoints.First().Latitude, 14);
-        Assert.Equal(-122.42730642251331, mobileFoodPoints.First().Longitude, 14);
+        Assert.Equal(37.76201920035647, mobileFoodPoints.First().Location.Latitude, 14);
+        Assert.Equal(-122.42730642251331, mobileFoodPoints.First().Location.Longitude, 14);
 
-        Assert.Equal(37.762476819591, mobileFoodPoints.Last().Latitude, 12);
-        Assert.Equal(-122.41181900367852, mobileFoodPoints.Last().Longitude, 14);
+        Assert.Equal(37.762476819591, mobileFoodPoints.Last().Location.Latitude, 12);
+        Assert.Equal(-122.41181900367852, mobileFoodPoints.Last().Location.Longitude, 14);
     }
 }

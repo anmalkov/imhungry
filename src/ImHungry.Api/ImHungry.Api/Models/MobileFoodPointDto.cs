@@ -1,6 +1,6 @@
 ﻿namespace ImHungry.Api.Models;
 
-public class MobileFoodPoint
+public class MobileFoodPointDto
 {
     public int Id { get; set; }
     public string? Name { get; set; }
@@ -12,7 +12,8 @@ public class MobileFoodPoint
 
     public string? Food { get; set; }
 
-    public LatLng Location { get; set; }
+    public double Latitude { get; set; }
+    public double Longitude { get; set; }
 
     public double Distance { get; set; }
 }

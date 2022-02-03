@@ -26,12 +26,21 @@ public class LatLngTests
 
     [Theory]
     [MemberData(nameof(Parse_Coordinates_Data))]
-    public void Parse_Coordinates(string coordinate, LatLng expectedCoordinate)
+    public void Parse_Coordinate(string coordinate, LatLng expectedCoordinate)
     {
         var result = LatLng.TryParse(coordinate, null, out LatLng resultCoordinate);
 
         Assert.True(result);
         Assert.Equal(expectedCoordinate.Latitude, resultCoordinate.Latitude, 15);
         Assert.Equal(expectedCoordinate.Longitude, resultCoordinate.Longitude, 15);
+    }
+
+    [Fact]
+    public void Parse_Not_Valid_Coordinate()
+    {
+        var result = LatLng.TryParse("1234sdfr2378", null, out LatLng resultCoordinate);
+
+        Assert.True(result);
+        Assert.Null(resultCoordinate);
     }
 }

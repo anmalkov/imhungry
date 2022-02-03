@@ -27,6 +27,6 @@ public class LatLng
         }
 
         coordinate = null;
-        return false;
+        return true;
     }
 }
