@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32120.378
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImHungry.Api", "ImHungry.Api\ImHungry.Api.csproj", "{4E89292D-D33C-4A77-8DD2-EF18DE9131CE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImHungry.Api.Tests", "ImHungry.Api.Tests\ImHungry.Api.Tests.csproj", "{3C99BB87-A94D-410E-8C2F-768E1FE56DD1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4E89292D-D33C-4A77-8DD2-EF18DE9131CE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4E89292D-D33C-4A77-8DD2-EF18DE9131CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4E89292D-D33C-4A77-8DD2-EF18DE9131CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4E89292D-D33C-4A77-8DD2-EF18DE9131CE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3C99BB87-A94D-410E-8C2F-768E1FE56DD1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3C99BB87-A94D-410E-8C2F-768E1FE56DD1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3C99BB87-A94D-410E-8C2F-768E1FE56DD1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3C99BB87-A94D-410E-8C2F-768E1FE56DD1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0912CB1C-21A2-4BDE-96FB-9484079EBDE8}
+	EndGlobalSection
+EndGlobal
