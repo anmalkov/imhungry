@@ -14,8 +14,4 @@
     <InternalsVisibleTo Include="ImHungry.Api.Tests" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Helpers\" />
-  </ItemGroup>
-
 </Project>
