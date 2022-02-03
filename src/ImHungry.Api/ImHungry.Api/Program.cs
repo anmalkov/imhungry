@@ -1,3 +1,5 @@
+using ImHungry.Api.Models;
+
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddEndpointsApiExplorer();
@@ -14,9 +16,9 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
-app.MapGet("/v1", () =>
+app.MapGet("/v1/{coordinate}", (LatLng coordinate) =>
 {
-    return "Food trucks";
+    return $"Food trucks nerby location {coordinate.Latitude}, {coordinate.Longitude}";
 })
 .WithGroupName("v1")  // MinimalAPI does not support versioning now, so this is as a workaround
 .WithName("GetTrucks");

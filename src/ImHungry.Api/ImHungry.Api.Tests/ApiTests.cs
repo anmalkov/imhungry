@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc.Testing;
+using System.Globalization;
 using System.Net.Http;
 using Xunit;
 
@@ -16,9 +17,9 @@ public class ApiTests
 
         var client = app.CreateClient();
 
-        var reply = await client.GetAsync("/v1");
+        var reply = await client.GetAsync($"/v1/50.830369184065056,4.831816576155524");
 
         Assert.True(reply.IsSuccessStatusCode);
-        Assert.Equal("Food trucks", await reply.Content.ReadAsStringAsync());
+        Assert.Equal($"Food trucks nerby location {Places.Boutersem.Latitude}, {Places.Boutersem.Longitude}", await reply.Content.ReadAsStringAsync());
     }
 }
