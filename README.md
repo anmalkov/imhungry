@@ -19,4 +19,4 @@ By default you will receive 5 neareast food trucks from specified location. If y
 
 ### Code documentation
 
-You can find it in (wiki)[https://github.com/anmalkov/imhungry/wiki]
+You can find it in [wiki](https://github.com/anmalkov/imhungry/wiki)
