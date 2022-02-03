@@ -1,8 +1,11 @@
+using ImHungry.Api.Models;
 using Microsoft.AspNetCore.Mvc.Testing;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
 using System;
+using System.Collections.Generic;
 using System.Globalization;
+using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Json;
 using Xunit;
@@ -13,7 +16,7 @@ class ImHungryApplication: WebApplicationFactory<Program>
 {
     protected override IHostBuilder? CreateHostBuilder()
     {
-        Environment.SetEnvironmentVariable("IMHUNGRY_CSV_DATA_URL", "https://data.sfgov.org//api//views//rqzj-sfat//rows.csv");
+        Environment.SetEnvironmentVariable("IMHUNGRY_CSV_DATA_URL", "https://data.sfgov.org/api/views/rqzj-sfat/rows.csv");
         return base.CreateHostBuilder();
     }
 
@@ -44,9 +47,10 @@ public class ApiTests
         var client = app.CreateClient();
 
         var reply = await client.GetAsync($"/v1/37.77638040110528,-122.42590558289392");
-        var content = await reply.Content.ReadAsStringAsync();
+        var points = await reply.Content.ReadFromJsonAsync<IEnumerable<MobileFoodPointDto>>();
 
         Assert.True(reply.IsSuccessStatusCode);
-        Assert.Equal($"Food trucks nerby location {Places.Boutersem.Latitude}, {Places.Boutersem.Longitude}", await reply.Content.ReadAsStringAsync());
+        Assert.NotNull(points);
+        Assert.Equal(5, points.Count());
     }
 }
