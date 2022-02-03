@@ -27,3 +27,20 @@ jobs:
       run: dotnet build --no-restore ./src/ImHungry.Api/ImHungry.Api.Tests/ImHungry.Api.Tests.csproj
     - name: Run tests
       run: dotnet test --no-build --verbosity normal ./src/ImHungry.Api/ImHungry.Api.Tests/ImHungry.Api.Tests.csproj
+    - name: Publish Api
+      run: dotnet publish --no-build --output ./publish ./src/ImHungry.Api/ImHungry.Api/ImHungry.Api.csproj
+    - name: Publish artifacts
+      uses: actions/upload-artifact@v2
+      with:
+        name: output
+        path: ./publish
+        
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Download artifacts
+      uses: actions/download-artifact@v2
+      with:
+        name: output
+        path: ./publish
