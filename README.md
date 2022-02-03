@@ -16,3 +16,7 @@ You can try it here: https://imhungry.azurewebsites.net/v1/ but please add <lati
 
 By default you will receive 5 neareast food trucks from specified location. If you need to have more or less just add parameter ?count=<number> to your Url.
 - Example: https://imhungry.azurewebsites.net/v1/37.77638040110528,-122.42590558289392?count=2
+
+### Code documentation
+
+You can find it in (wiki)[https://github.com/anmalkov/imhungry/wiki]
