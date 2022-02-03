@@ -22,7 +22,7 @@ jobs:
     - name: Build Api
       run: dotnet build --no-restore ./src/ImHungry.Api/ImHungry.Api/ImHungry.Api.csproj
     - name: Restore dependencies Api.Tests
-      run: dotnet restore ./src/ImHungry.Api/ImHungry.Api/ImHungry.Api.Tests/ImHungry.Api.Tests.csproj
+      run: dotnet restore ./src/ImHungry.Api/ImHungry.Api.Tests/ImHungry.Api.Tests.csproj
     - name: Build API.Tests
       run: dotnet build --no-restore ./src/ImHungry.Api/ImHungry.Api.Tests/ImHungry.Api.Tests.csproj
     - name: Run tests
