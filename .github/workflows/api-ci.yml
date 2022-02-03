@@ -17,9 +17,13 @@ jobs:
       uses: actions/setup-dotnet@v1
       with:
         dotnet-version: 6.0.x
-    - name: Restore dependencies
+    - name: Restore dependencies Api
       run: dotnet restore ./src/ImHungry.Api/ImHungry.Api/ImHungry.Api.csproj
-    - name: Build
+    - name: Build Api
       run: dotnet build --no-restore ./src/ImHungry.Api/ImHungry.Api/ImHungry.Api.csproj
-    - name: Test
+    - name: Restore dependencies Api.Tests
+      run: dotnet restore ./src/ImHungry.Api/ImHungry.Api/ImHungry.Api.Tests/ImHungry.Api.Tests.csproj
+    - name: Build API.Tests
+      run: dotnet build --no-restore ./src/ImHungry.Api/ImHungry.Api.Tests/ImHungry.Api.Tests.csproj
+    - name: Run tests
       run: dotnet test --no-build --verbosity normal ./src/ImHungry.Api/ImHungry.Api.Tests/ImHungry.Api.Tests.csproj
