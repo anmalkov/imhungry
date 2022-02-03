@@ -1,9 +1,13 @@
 using ImHungry.Api.Models;
+using ImHungry.Api.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.AddHttpClient();
+
+builder.Services.AddSingleton<IMobileFoodPointsRepository, MobileFoodPointsRepository>();
 
 var app = builder.Build();
 
@@ -16,7 +20,7 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
-app.MapGet("/v1/{coordinate}", (LatLng coordinate) =>
+app.MapGet("/v1/{coordinate}", async (LatLng coordinate) =>
 {
     return $"Food trucks nerby location {coordinate.Latitude}, {coordinate.Longitude}";
 })
